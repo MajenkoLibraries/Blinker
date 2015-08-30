@@ -38,6 +38,10 @@ void setup() {
     // Let's make it faster - say 250ms delay.
     blinker.setDelay(250);
 
+    // There is also an asymetric blink delay version which takes two delay values,
+    // one for the ON time and one for the OFF time:
+    // blinker.setDelay(50, 950);
+
     // Start the blinker blinking.  There's also a blinker.stop() function.
     blinker.start();
 }

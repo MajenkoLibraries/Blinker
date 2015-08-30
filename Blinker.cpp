@@ -2,20 +2,28 @@
 
 Blinker::Blinker(int pin) {
     _blinkPin = pin;
-    _blinkDelay = 500;
+    _highDelay = 500;
+    _lowDelay = 500;
     _lastBlink = 0;
     _blinkState = false;
     _running = false;
 }
 
 void Blinker::setDelay(uint32_t d) {
-    _blinkDelay = d;
+    _highDelay = d;
+    _lowDelay = d;
+}
+
+void Blinker::setDelay(uint32_t h, uint32_t l) {
+    _highDelay = h;
+    _lowDelay = l;
 }
 
 void Blinker::blink() {
     uint32_t diff = millis() - _lastBlink;
-    if (diff >= _blinkDelay) {
-        _lastBlink = millis() - (diff - _blinkDelay); // Account for any delay in calling blink
+    uint32_t blinkDelay = _blinkState ? _highDelay : _lowDelay;
+    if (diff >= blinkDelay) {
+        _lastBlink = millis() - (diff - blinkDelay); // Account for any delay in calling blink
         _blinkState = !_blinkState;
         if (_running) {
             digitalWrite(_blinkPin, _blinkState ? HIGH : LOW);
