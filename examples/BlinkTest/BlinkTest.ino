@@ -37,6 +37,9 @@ void setup() {
     // The blinker defaults to 500ms delay, which is a 1 second period blinking.
     // Let's make it faster - say 250ms delay.
     blinker.setDelay(250);
+
+    // Start the blinker blinking.  There's also a blinker.stop() function.
+    blinker.start();
 }
 
 void loop() {

@@ -13,11 +13,14 @@ class Blinker {
         uint32_t _blinkDelay;
         uint32_t _lastBlink;
         boolean _blinkState;
+        boolean _running;
 
 	public:
 		Blinker(int pin);
 		void setDelay(uint32_t d);
         void blink();
+        void start();
+        void stop();
 };
 
 #endif
