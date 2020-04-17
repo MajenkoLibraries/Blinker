@@ -1,18 +1,1 @@
-{
-    "name": "Blinker",
-    "provides": "Blinker.h",
-    "license": "LICENSE.md",
-    "readme": "README.md",
-    "description": "Blink an output in different patterns",
-    "category": "IO",
-    "subcategory": "Digital",
-    "maintainer": "Matt Jenkins <matt@majenko.co.uk>",
-    "version": "1.0.1",
-    "family": "all",
-    "core": "all",
-    "install": {
-        "examples": "/",
-        "Blinker.cpp": "/",
-        "Blinker.h": "/"
-    }
-}
+{"name":"Blinker","provides":"Blinker.h","license":"LICENSE.md","readme":"README.md","description":"Blink an output in different patterns","category":"IO","subcategory":"Digital","maintainer":"Matt Jenkins <matt@majenko.co.uk>","version":"1.0.2","family":"all","core":"all","install":{"examples":"\/","library.properties":"\/","src":"\/"}}
