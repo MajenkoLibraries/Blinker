@@ -34,11 +34,11 @@ void Blinker::blink() {
 void Blinker::start() {
     pinMode(_blinkPin, OUTPUT);
     _running = true;
-    _blinkState = false;
     _lastBlink = millis();
 }
 
-void Blinker::stop() {
+void Blinker::stop(bool idleState) {
     _running = false;
-    digitalWrite(_blinkPin, LOW);
+    _blinkState = idleState;
+    digitalWrite(_blinkPin, _blinkState);
 }

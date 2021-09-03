@@ -22,7 +22,7 @@ class Blinker {
 		void setDelay(uint32_t h, uint32_t l);
         void blink();
         void start();
-        void stop();
+        void stop(bool idleState = LOW);
 };
 
 #endif
